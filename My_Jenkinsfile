@@ -5,7 +5,7 @@ stage('BUID'){
 agent any
 steps{
 echo "This is the build stage"
-sh 'sleep 5'
+
 }
 }
 
@@ -13,7 +13,7 @@ stage('TEST'){
 agent { label 'agent1' }
 steps{
 echo "This is the test stage"
-sh 'sleep 5'
+
 }
 }
 
@@ -21,7 +21,7 @@ stage('DEPLOYED'){
 agent { label 'master' }
 steps{
 echo "This is the deployed stage"
-sh 'sleep 5'
+
 }
 }
 }
