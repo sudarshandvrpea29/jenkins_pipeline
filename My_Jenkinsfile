@@ -6,18 +6,21 @@ stages {
 stage('BUID'){
 steps{
 echo "This is the build stage"
+sh 'sleep 5'
 }
 }
 
 stage('TEST'){
 steps{
 echo "This is the test stage"
+sh 'sleep 5'
 }
 }
 
 stage('DEPLOYED'){
 steps{
 echo "This is the deployed stage"
+sh 'sleep 5'
 }
 }
 }
