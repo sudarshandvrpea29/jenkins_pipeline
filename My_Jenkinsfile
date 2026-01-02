@@ -1,28 +1,45 @@
 pipeline {
-agent none
+agent any
 stages {
 stage('BUID'){
-agent any
 steps{
 echo "This is the build stage"
 
 }
 }
 
-stage('TEST'){
-agent { label 'agent1' }
+stage('TEST PARALLEL'){
+parallel {
+stage('TEST ON CHROME') {
 steps{
-echo "This is the test stage"
-
+echo "This is the TEST on CHROME BROWSER"
+}
+}
+stage('TEST ON SAFARI') {
+steps{
+echo "This is the TEST on SAFARI BROWSER"
+}
+}
 }
 }
 
 stage('DEPLOYED'){
-agent { label 'master' }
+parallel {
+stage ('server 1') {
 steps{
-echo "This is the deployed stage"
+echo "This is the deployed stage1"
+}
+}
+stage ('server 2') {
+steps{
+echo "This is the deployed stage2"
+}
+}
+stage ('server 3') {
+steps{
+echo "This is the deployed stage3"
+}
+}
+}
+}
 
-}
-}
-}
-}
