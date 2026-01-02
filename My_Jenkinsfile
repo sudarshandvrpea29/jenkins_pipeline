@@ -1,5 +1,10 @@
 pipeline {
 agent any
+parameters {
+  string defaultValue: 'TEST', description: 'environmental variable to depoly to application ', name: 'EVV', trim: true
+choice choices: ['main', 'master'], description: 'environmental variable to depoly to application', name: 'BRANCH'
+}
+
 stages {
 stage('BUID'){
 steps{
