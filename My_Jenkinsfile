@@ -19,7 +19,7 @@ sh 'sleep 60;
 stage('TEST ON SAFARI') {
 steps{
 echo "This is the TEST on SAFARI BROWSER"
-sh 'sleep 60;
+sh 'sleep 60';
 }
 }
 }
@@ -30,16 +30,19 @@ parallel {
 stage ('server 1') {
 steps{
 echo "This is the deployed stage1"
+sh 'sleep 60';
 }
 }
 stage ('server 2') {
 steps{
 echo "This is the deployed stage2"
+sh 'sleep 60'
 }
 }
 stage ('server 3') {
 steps{
 echo "This is the deployed stage3"
+sh 'sleep 60'
 }
 }
 }
