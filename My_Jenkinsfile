@@ -18,13 +18,13 @@ parallel {
 stage('TEST ON CHROME') {
 steps{
 echo "This is the TEST on CHROME BROWSER"
-sh 'sleep 60;
+
 }
 }
 stage('TEST ON SAFARI') {
 steps{
 echo "This is the TEST on SAFARI BROWSER"
-sh 'sleep 60';
+
 }
 }
 }
