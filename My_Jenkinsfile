@@ -8,7 +8,7 @@ echo "This is the build stage"
 }
 }
 
-stage('TEST PARALLEL'){
+stage('TEST PARALLELE'){
 parallel {
 stage('TEST ON CHROME') {
 steps{
